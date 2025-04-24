@@ -357,7 +357,7 @@ int main()
     Solution solution;
 
     vector<double> inputs(4);
-    cout << "Enter 4 numbers: ";
+    cout << "Enter 4 numbers with spaces: ";
     for (int i = 0; i < 4; ++i) {
         cin >> inputs[i];
     }
@@ -370,8 +370,11 @@ int main()
   
     sort(solutions.begin(), solutions.end());
     solutions.erase(unique(solutions.begin(), solutions.end()), solutions.end());
-  
-    for (auto &expr : solutions)
-      cout << expr << " = 24\n";
+    
+    if(solutions.size()>0)
+        for (auto &expr : solutions)
+            cout << expr << " = 24\n";
+    else 
+        cout << "No solutions!\n";
   
 }
